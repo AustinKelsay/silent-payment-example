@@ -1,8 +1,12 @@
 const bitcoin = require('bitcoinjs-lib');
+const ecc = require('tiny-secp256k1');
+const {ECPairFactory} = require('ecpair');
 const crypto = require('crypto');
 
+const ECPair = ECPairFactory(ecc);
+
 const createSilentPaymentPubkey = (masterPublicKey) => {
-    const { publicKey } = bitcoin.ECPair.fromPublicKey(Buffer.from(masterPublicKey, 'hex'));
+    const { publicKey } = ECPair.fromPublicKey(Buffer.from(masterPublicKey, 'hex'));
 
     return publicKey;
 }

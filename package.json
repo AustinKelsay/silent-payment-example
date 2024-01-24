@@ -10,6 +10,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bitcoinjs-lib": "^6.1.5"
+    "axios": "^1.6.5",
+    "bigi": "^1.4.2",
+    "bitcoinjs-lib": "^6.1.5",
+    "ecpair": "^2.1.0",
+    "ecurve": "^1.0.6",
+    "tiny-secp256k1": "^2.2.3"
   }
 }

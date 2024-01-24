@@ -10,7 +10,7 @@ const { createSilentPaymentAddress, paySilentPaymentAddress, broadcastTransactio
 // Public Key: 034622aa2b1d6f1d6197e8db17228c4acd1f7e805ae07ee6a9b4bbd7da50ef4f8c
 
 // Contract Data
-const contractData = 'some random string of data';
+const contractData = 'some random string of data bitch';
 
 // Output to spend
 const txid = '542f57ec34a7dcf4767418266ae09b899e00438a141acfea28d8fb82733074d2';
@@ -18,12 +18,15 @@ const vout = 0;
 
 // RECEIVER create the silent payment public key
 const silentPaymentPubkey = createSilentPaymentPubkey('034622aa2b1d6f1d6197e8db17228c4acd1f7e805ae07ee6a9b4bbd7da50ef4f8c');
+console.log("silentPaymentPubkey", silentPaymentPubkey);
 
 // SENDER create the silent payment address
 const silentPaymentAddress = createSilentPaymentAddress(silentPaymentPubkey, contractData);
+console.log("silentPaymentAddress", silentPaymentAddress);
 
 // SENDER create the transaction
 const tx = paySilentPaymentAddress('6ba44da45c306d1b10324f9a5d454d5125febd4bd4a79a99fe20aa51663c5962', silentPaymentAddress, 10000, txid, vout);
+console.log("tx", tx);
 
 // SENDER broadcast the transaction
 broadcastTransaction(tx).then((response) => {
